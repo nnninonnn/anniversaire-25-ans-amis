@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le week-end des 25 ans</title>
+<meta name="description" content="Programme du week-end entre amis pour les 25 ans de Ninon, du vendredi 13 au lundi 16 mai 2027 à Caussade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Mrs+Saint+Delafield&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* layout: a scrolling paper invitation — pencil-sketch house motif, soft blush/stone palette, one long unrolled card */
+  :root{
+    --bg:#faf5f3;
+    --surface:#ffffff;
+    --surface-soft:#fdf1ee;
+    --ink:#4a4648;
+    --ink-soft:#8c8689;
+    --pink:#f4b6c2;
+    --pink-deep:#dd7f93;
+    --grey:#a1a1a4;
+    --line:rgba(161,161,164,.3);
+    --shadow:rgba(74,70,72,.1);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#211d1f;
+      --surface:#2a2527;
+      --surface-soft:#332b2d;
+      --ink:#f4ecea;
+      --ink-soft:#c3b9bb;
+      --pink:#f6c3cd;
+      --pink-deep:#f2a2b3;
+      --grey:#bcb9bb;
+      --line:rgba(244,236,234,.16);
+      --shadow:rgba(0,0,0,.4);
+      color-scheme: dark;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Jost',system-ui,sans-serif;
+    font-weight:300;
+    padding-left:16px;
+    padding-right:16px;
+  }
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0}
+  p{margin:0}
+  .script{font-family:'Mrs Saint Delafield',cursive}
+  .page{max-width:720px;margin:0 auto;padding-block:48px 64px;display:flex;flex-direction:column;gap:72px}
+
+  /* hero */
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+  .eyebrow{font-family:'Jost';font-weight:500;letter-spacing:.28em;text-transform:uppercase;font-size:13px;color:var(--pink-deep)}
+  .script-line{font-family:'Mrs Saint Delafield',cursive;font-size:clamp(34px,8vw,48px);color:var(--ink-soft);margin-top:6px}
+  .big{font-size:clamp(76px,22vw,150px);line-height:.9;color:var(--pink);font-weight:900;letter-spacing:.01em}
+  .tagline{max-width:36ch;color:var(--ink-soft);font-size:16px;line-height:1.6;margin-top:4px}
+  .tagline.friends{color:var(--pink-deep);font-weight:400}
+  .hero-art{width:min(300px,70vw);margin-block:12px;opacity:.92}
+  .hero-art img{filter:drop-shadow(0 18px 28px var(--shadow))}
+  .meta-card{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;padding:20px 28px;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+  .meta-card .item{display:flex;flex-direction:column;gap:4px}
+  .meta-card .label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .meta-card .value{font-family:'Playfair Display';font-style:italic;font-weight:700;font-size:19px;color:var(--ink)}
+
+  .countdown{display:flex;gap:14px;margin-top:8px}
+  .countdown .unit{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:56px}
+  .countdown .num{font-family:'Playfair Display';font-weight:900;font-size:clamp(26px,6vw,34px);color:var(--pink-deep);font-variant-numeric:tabular-nums}
+  .countdown .unit-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+
+  .scroll-cta{display:inline-block;margin-top:10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--line);padding-bottom:2px}
+
+  /* sections */
+  .section{display:flex;flex-direction:column;gap:18px}
+  .section h2{font-size:clamp(26px,5vw,32px);font-style:italic;text-align:center}
+  .section > p.lead{text-align:center;color:var(--ink-soft);max-width:48ch;margin-inline:auto;line-height:1.6}
+
+  /* programme: day blocks */
+  .day-block{display:flex;flex-direction:column;gap:12px}
+  .day-title{font-size:19px;font-style:italic;color:var(--pink-deep);text-align:left}
+  .day-text{font-size:15px;line-height:1.7;color:var(--ink)}
+
+  /* timeline */
+  .timeline{list-style:none;display:flex;flex-direction:column;gap:0;border-left:1px solid var(--line);margin-left:8px;padding-left:28px}
+  .timeline li{position:relative;padding-block:12px}
+  .timeline li::before{content:"";position:absolute;left:-33px;top:20px;width:9px;height:9px;border-radius:50%;background:var(--pink)}
+  .timeline .time{display:block;font-family:'Playfair Display';font-style:italic;font-weight:700;color:var(--pink-deep);font-size:15px}
+  .timeline .event{display:block;font-size:18px;margin-top:2px}
+
+  /* dress code */
+  .swatches{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:4px}
+  .swatch{width:26px;height:26px;border-radius:50%;border:1px solid var(--line)}
+  .swatch.no{position:relative;background:#232023}
+  .swatch.no::after{content:"";position:absolute;inset:0;margin:auto;width:2px;height:30px;background:var(--pink-deep);transform:rotate(45deg)}
+
+  /* divider */
+  .divider{width:100%;opacity:.8}
+  .divider img{width:100%;height:auto}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+  .card h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--pink-deep)}
+  .card p{font-size:15px;line-height:1.55;color:var(--ink)}
+  .card em{color:var(--ink-soft);font-style:italic}
+  .card a{font-size:13px;color:var(--pink-deep);text-decoration:none;border-bottom:1px solid currentColor;align-self:flex-start;margin-top:2px}
+  .card .placeholder{color:var(--ink-soft);font-style:italic}
+  .btn-ghost{font-size:13px;color:var(--ink-soft);text-decoration:none;border:1px solid var(--line);border-radius:3px;padding:8px 12px;align-self:flex-start;display:inline-flex;gap:6px;align-items:center;cursor:default}
+  .btn-ghost .soon{font-style:italic;opacity:.8}
+  a.btn-ghost{cursor:pointer}
+  a.btn-ghost:hover{color:var(--pink-deep);border-color:var(--pink-deep)}
+
+  /* logement */
+  .logement{background:var(--surface-soft);border-radius:6px;padding:28px 24px;display:flex;flex-direction:column;gap:14px}
+  .logement p{font-size:15px;line-height:1.7;color:var(--ink)}
+
+  /* rsvp */
+  .rsvp{background:var(--surface-soft);border-radius:6px;padding:32px 24px;margin-inline:-8px}
+  .rsvp-embed{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:22px}
+  .rsvp-embed iframe{width:100%;border:none;display:block;min-height:900px}
+  .rsvp-placeholder{padding:40px 20px;text-align:center;color:var(--ink-soft);font-size:14px;line-height:1.7}
+
+  .footer{text-align:center;display:flex;flex-direction:column;gap:6px;color:var(--ink-soft)}
+  .footer .script{font-size:30px;color:var(--pink-deep)}
+  .footer .footnote{font-size:13px}
+
+  @media (max-width:520px){
+    .cards{grid-template-columns:1fr}
+    .meta-card{flex-direction:column;align-items:center;gap:14px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <p class="eyebrow">Invitation — spécial amis</p>
+    <p class="script-line">Je fête mes</p>
+    <h1 class="big">25&nbsp;ans</h1>
+    <p class="tagline">Une après-midi au soleil qui se prolongera jusqu'au bout de la nuit.</p>
+    <p class="tagline friends">Et pour vous, on prolonge le week-end du vendredi au lundi !</p>
+
+    <div class="hero-art">
+      <img src="images/maison.webp" alt="Illustration au crayon de la maison de la fête">
+    </div>
+
+    <div class="meta-card">
+      <div class="item">
+        <span class="label">Dates</span>
+        <span class="value">Vendredi 13 → lundi 16 mai 2027</span>
+      </div>
+      <div class="item">
+        <span class="label">Lieu</span>
+        <span class="value">Caussade, 82300</span>
+      </div>
+    </div>
+
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="unit"><span class="num" id="cd-d">—</span><span class="unit-label">jours</span></div>
+      <div class="unit"><span class="num" id="cd-h">—</span><span class="unit-label">h</span></div>
+      <div class="unit"><span class="num" id="cd-m">—</span><span class="unit-label">min</span></div>
+      <div class="unit"><span class="num" id="cd-s">—</span><span class="unit-label">sec</span></div>
+    </div>
+
+    <span class="scroll-cta">Tous les détails ↓</span>
+  </header>
+
+  <section class="section" id="programme">
+    <h2>Le programme du week-end</h2>
+
+    <div class="day-block">
+      <h3 class="day-title">Samedi 14 mai — la fête</h3>
+      <ol class="timeline">
+        <li><span class="time">15h — 17h</span><span class="event">Accueil &amp; goûter</span></li>
+        <li><span class="time">17h</span><span class="event">Le gâteau</span></li>
+        <li><span class="time">18h</span><span class="event">Apéro</span></li>
+        <li><span class="time">20h</span><span class="event">Dîner buffet</span></li>
+        <li><span class="time">Puis</span><span class="event">La soirée continue…</span></li>
+      </ol>
+    </div>
+
+    <div class="day-block">
+      <h3 class="day-title">Dimanche 15 mai — journée activités</h3>
+      <p class="day-text">Au choix (selon météo et envies, on décide ensemble sur place) : une randonnée dans la vallée, ou une descente en kayak dans les gorges de l'Aveyron. Pique-nique ou déjeuner sur le pouce, puis retour tranquille à la maison pour une soirée plus calme.</p>
+    </div>
+
+    <div class="day-block">
+      <h3 class="day-title">Lundi 16 mai — dernière activité &amp; départs</h3>
+      <p class="day-text">Encore une petite activité pour celles et ceux qui restent (idée à confirmer), puis départs échelonnés dans la journée selon les trains de chacun·e.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Dress code</h2>
+    <p class="lead">Pour samedi soir : tenue colorée, dans un esprit chic / cocktail, dans la mesure du possible. Une seule règle : pas de noir ! (Le reste du week-end, tenue confortable évidemment.)</p>
+    <div class="swatches">
+      <span class="swatch" style="background:#f4b6c2"></span>
+      <span class="swatch" style="background:#f3a65c"></span>
+      <span class="swatch" style="background:#e8d35a"></span>
+      <span class="swatch" style="background:#7fc9a8"></span>
+      <span class="swatch" style="background:#6fa8dc"></span>
+      <span class="swatch" style="background:#b088d6"></span>
+      <span class="swatch no" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <div class="divider">
+    <img src="images/portail.webp" alt="Illustration au crayon du portail en fer forgé">
+  </div>
+
+  <section class="section">
+    <h2>Infos pratiques</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Adresse</h3>
+        <p>Caussade (82300)<br><em>adresse précise à venir</em></p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Caussade+82300" target="_blank" rel="noopener">Ouvrir dans Maps</a>
+      </div>
+      <div class="card">
+        <h3>Accès</h3>
+        <p><strong>En voiture</strong> — parking possible dans la rue.</p>
+        <p><strong>En train</strong> — direct Paris–Caussade en Intercités (6h), ou direct Paris–Montauban en TGV (4h) puis TER (15 min) ou voiture (20 min).</p>
+      </div>
+      <div class="card">
+        <h3>Playlist</h3>
+        <p>Ajoute tes titres préférés à la playlist de la soirée.</p>
+        <a class="btn-ghost" href="https://open.spotify.com/playlist/3QX7OpYQHkL5pF5EztpXE3?si=c2ac44d5aacb476f&amp;pt=a5c92b63921ec546f5f88092b9856722" target="_blank" rel="noopener">Ouvrir la playlist</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="comment-venir">
+    <h2>Comment venir</h2>
+    <p class="lead">Les horaires précis arrivent bientôt — en attendant, voici de quoi t'organiser.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Vendredi (arrivée)</h3>
+        <p class="placeholder">Infos à venir — je complète bientôt.</p>
+      </div>
+      <div class="card">
+        <h3>Samedi (arrivée)</h3>
+        <p class="placeholder">Infos à venir — je complète bientôt.</p>
+      </div>
+      <div class="card">
+        <h3>Dimanche (retour)</h3>
+        <p class="placeholder">Infos à venir — je complète bientôt.</p>
+      </div>
+      <div class="card">
+        <h3>Lundi (retour)</h3>
+        <p class="placeholder">Infos à venir — je complète bientôt.</p>
+      </div>
+    </div>
+    <p class="lead">À voir plus tard : pour celles et ceux qui viennent en voiture, comment on s'organise pour se déplacer sur place (covoiturage entre la gare et la maison, trajets vers les activités, etc.).</p>
+  </section>
+
+  <section class="section logement">
+    <h2>Logement</h2>
+    <p>Je m'occupe de réserver un logement où on sera toutes et tous ensemble. Je réserverai une fois les RSVP connus, pour avoir le bon nombre de chambres et de lits.</p>
+    <p>Je demanderai sans doute une petite participation aux frais — le montant sera à voir d'ici mai, et ajusté selon les moyens de chacun·e.</p>
+  </section>
+
+  <section class="section rsvp" id="rsvp">
+    <h2>RSVP</h2>
+    <p class="lead">Dis-moi si tu seras des nôtres pour le week-end.</p>
+
+    <div class="rsvp-embed">
+      <!--
+        ÉTAPE SUIVANTE : remplace ce bloc par le code d'intégration de ton Google Form.
+        Dans Google Forms : Envoyer → icône "<>" (Intégrer) → copie le <iframe> et colle-le ici
+        à la place du <div class="rsvp-placeholder">...</div> ci-dessous.
+      -->
+      <div class="rsvp-placeholder">
+        Le formulaire sera affiché ici — envoie-moi le lien de ton Google Form et je l'intègre.
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="script">À très vite</p>
+    <p class="footnote">Une question ? Préviens-moi directement par message.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var target = new Date(2027, 4, 14, 15, 0, 0).getTime();
+  var elD = document.getElementById('cd-d');
+  var elH = document.getElementById('cd-h');
+  var elM = document.getElementById('cd-m');
+  var elS = document.getElementById('cd-s');
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    var diff = Math.max(0, target - Date.now());
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor(diff % 86400000 / 3600000);
+    var m = Math.floor(diff % 3600000 / 60000);
+    var s = Math.floor(diff % 60000 / 1000);
+    elD.textContent = String(d);
+    elH.textContent = pad(h);
+    elM.textContent = pad(m);
+    elS.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
